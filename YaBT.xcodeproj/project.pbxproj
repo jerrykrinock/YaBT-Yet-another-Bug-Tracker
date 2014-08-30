@@ -15,6 +15,7 @@
 		4821FD1F19B0F1A80076F617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD1D19B0F1A80076F617 /* Main.storyboard */; };
 		4821FD2119B0F1A80076F617 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD2019B0F1A80076F617 /* Images.xcassets */; };
 		4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD2C19B0F1A90076F617 /* YaBTTests.m */; };
+		48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		4821FD2619B0F1A90076F617 /* YaBTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YaBTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4821FD2B19B0F1A90076F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4821FD2C19B0F1A90076F617 /* YaBTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YaBTTests.m; sourceTree = "<group>"; };
+		48AD9CD919B12BC300861763 /* YaBTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaBTGlobals.h; sourceTree = "<group>"; };
+		48AD9CDA19B12BC300861763 /* YaBTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaBTGlobals.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				4821FD1D19B0F1A80076F617 /* Main.storyboard */,
 				4821FD2019B0F1A80076F617 /* Images.xcassets */,
 				4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */,
+				48AD9CD919B12BC300861763 /* YaBTGlobals.h */,
+				48AD9CDA19B12BC300861763 /* YaBTGlobals.m */,
 				4821FD0D19B0F1A80076F617 /* Supporting Files */,
 			);
 			path = YaBT;
@@ -223,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
 				4821FD1C19B0F1A80076F617 /* DetailViewController.m in Sources */,
 				4821FD1919B0F1A80076F617 /* MasterViewController.m in Sources */,
 				4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */,
@@ -412,6 +418,7 @@
 				4821FD3219B0F1A90076F617 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4821FD3319B0F1A90076F617 /* Build configuration list for PBXNativeTarget "YaBTTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				4821FD3519B0F1A90076F617 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
