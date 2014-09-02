@@ -1,11 +1,3 @@
-//
-//  DetailViewController.m
-//  YaBT
-//
-//  Created by Jerry on 14/08/29.
-//  Copyright (c) 2014 Jerry. All rights reserved.
-//
-
 #import "DetailViewController.h"
 #import "YaBTGlobals.h"
 

@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		48AD9CEA19B20BE700861763 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 48AD9CED19B20BE700861763 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				48AD9CEE19B20BF300861763 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4821FD1019B0F1A80076F617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD0F19B0F1A80076F617 /* main.m */; };
 		4821FD1319B0F1A80076F617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1219B0F1A80076F617 /* AppDelegate.m */; };
@@ -16,6 +30,14 @@
 		4821FD2119B0F1A80076F617 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD2019B0F1A80076F617 /* Images.xcassets */; };
 		4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD2C19B0F1A90076F617 /* YaBTTests.m */; };
 		48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
+		48AD9CFB19B20DE900861763 /* _Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF419B20DE900861763 /* _Bug.m */; };
+		48AD9CFC19B20DE900861763 /* _Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF419B20DE900861763 /* _Bug.m */; };
+		48AD9CFD19B20DE900861763 /* _Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF619B20DE900861763 /* _Details.m */; };
+		48AD9CFE19B20DE900861763 /* _Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF619B20DE900861763 /* _Details.m */; };
+		48AD9CFF19B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
+		48AD9D0019B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
+		48AD9D0119B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
+		48AD9D0219B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +68,15 @@
 		4821FD2C19B0F1A90076F617 /* YaBTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YaBTTests.m; sourceTree = "<group>"; };
 		48AD9CD919B12BC300861763 /* YaBTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaBTGlobals.h; sourceTree = "<group>"; };
 		48AD9CDA19B12BC300861763 /* YaBTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaBTGlobals.m; sourceTree = "<group>"; };
+		48AD9CF319B20DE900861763 /* _Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Bug.h; sourceTree = "<group>"; };
+		48AD9CF419B20DE900861763 /* _Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Bug.m; sourceTree = "<group>"; };
+		48AD9CF519B20DE900861763 /* _Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Details.h; sourceTree = "<group>"; };
+		48AD9CF619B20DE900861763 /* _Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Details.m; sourceTree = "<group>"; };
+		48AD9CF719B20DE900861763 /* Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bug.h; sourceTree = "<group>"; };
+		48AD9CF819B20DE900861763 /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
+		48AD9CF919B20DE900861763 /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
+		48AD9CFA19B20DE900861763 /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
+		48E1AE5C19B5889C00AF3843 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +102,7 @@
 			children = (
 				4821FD0C19B0F1A80076F617 /* YaBT */,
 				4821FD2919B0F1A90076F617 /* YaBTTests */,
+				48E1AE5B19B5889C00AF3843 /* YaBT-DemoDBMaker */,
 				4821FD0B19B0F1A80076F617 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +119,7 @@
 		4821FD0C19B0F1A80076F617 /* YaBT */ = {
 			isa = PBXGroup;
 			children = (
+				48AD9CF219B20DE900861763 /* Mogenerated */,
 				4821FD1119B0F1A80076F617 /* AppDelegate.h */,
 				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
 				4821FD1719B0F1A80076F617 /* MasterViewController.h */,
@@ -127,6 +160,29 @@
 				4821FD2B19B0F1A90076F617 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48AD9CF219B20DE900861763 /* Mogenerated */ = {
+			isa = PBXGroup;
+			children = (
+				48AD9CF319B20DE900861763 /* _Bug.h */,
+				48AD9CF419B20DE900861763 /* _Bug.m */,
+				48AD9CF519B20DE900861763 /* _Details.h */,
+				48AD9CF619B20DE900861763 /* _Details.m */,
+				48AD9CF719B20DE900861763 /* Bug.h */,
+				48AD9CF819B20DE900861763 /* Bug.m */,
+				48AD9CF919B20DE900861763 /* Details.h */,
+				48AD9CFA19B20DE900861763 /* Details.m */,
+			);
+			path = Mogenerated;
+			sourceTree = "<group>";
+		};
+		48E1AE5B19B5889C00AF3843 /* YaBT-DemoDBMaker */ = {
+			isa = PBXGroup;
+			children = (
+				48E1AE5C19B5889C00AF3843 /* main.m */,
+			);
+			path = "YaBT-DemoDBMaker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +239,9 @@
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 4821FD0919B0F1A80076F617;
 					};
+					48AD9CEA19B20BE700861763 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 				};
 			};
 			buildConfigurationList = 4821FD0519B0F1A80076F617 /* Build configuration list for PBXProject "YaBT" */;
@@ -200,6 +259,7 @@
 			targets = (
 				4821FD0919B0F1A80076F617 /* YaBT */,
 				4821FD2519B0F1A90076F617 /* YaBTTests */,
+				48AD9CEA19B20BE700861763 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +283,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48AD9CEE19B20BF300861763 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mogenerator -m YaBT/YaBT.xcdatamodeld/YaBT.xcdatamodel -O YaBT/Mogenerated --template-var arc=true";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4821FD0619B0F1A80076F617 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,8 +306,12 @@
 			files = (
 				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
 				4821FD1C19B0F1A80076F617 /* DetailViewController.m in Sources */,
+				48AD9D0119B20DE900861763 /* Details.m in Sources */,
+				48AD9CFD19B20DE900861763 /* _Details.m in Sources */,
 				4821FD1919B0F1A80076F617 /* MasterViewController.m in Sources */,
 				4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */,
+				48AD9CFB19B20DE900861763 /* _Bug.m in Sources */,
+				48AD9CFF19B20DE900861763 /* Bug.m in Sources */,
 				4821FD1319B0F1A80076F617 /* AppDelegate.m in Sources */,
 				4821FD1019B0F1A80076F617 /* main.m in Sources */,
 			);
@@ -241,7 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AD9CFC19B20DE900861763 /* _Bug.m in Sources */,
 				4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */,
+				48AD9D0219B20DE900861763 /* Details.m in Sources */,
+				48AD9D0019B20DE900861763 /* Bug.m in Sources */,
+				48AD9CFE19B20DE900861763 /* _Details.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +483,20 @@
 			};
 			name = Release;
 		};
+		48AD9CEB19B20BE700861763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48AD9CEC19B20BE700861763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -425,6 +523,15 @@
 			buildConfigurations = (
 				4821FD3419B0F1A90076F617 /* Debug */,
 				4821FD3519B0F1A90076F617 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48AD9CED19B20BE700861763 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AD9CEB19B20BE700861763 /* Debug */,
+				48AD9CEC19B20BE700861763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

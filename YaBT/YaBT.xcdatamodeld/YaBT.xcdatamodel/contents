@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="14A329f" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Bug">
+    <entity name="Bug" representedClassName="Bug">
         <attribute name="timestamp" optional="YES" attributeType="Date">
             <userInfo/>
         </attribute>
@@ -10,7 +10,7 @@
         <relationship name="details" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Details" inverseName="bug" inverseEntity="Details" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Details" syncable="YES">
+    <entity name="Details" representedClassName="Details" syncable="YES">
         <attribute name="steps" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bug" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bug" inverseName="details" inverseEntity="Bug" syncable="YES"/>
     </entity>
