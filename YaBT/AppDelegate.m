@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
-#import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "ProductViewController.h"
+#import "ProductsViewController.h"
+#import "YaBTGlobals.h"
 
 @interface AppDelegate ()
 
@@ -12,7 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
+    ProductsViewController *controller = (ProductsViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
@@ -68,19 +69,38 @@
         return _persistentStoreCoordinator;
     }
     
+    NSError* error = nil;
+
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"YaBT.sqlite"];
-    NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+
+    // If database is not found, replace with fake data
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *fakeDataURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"FakeData"
+                                                                                   ofType:@"sqlite"]];
+        
+        /*SSYDBL*/ NSLog(@"Copied fake data store from %@", fakeDataURL) ;
+        if (![[NSFileManager defaultManager] copyItemAtURL:fakeDataURL
+                                                     toURL:storeURL
+                                                     error:&error]) {
+            NSLog(@"Failed initializing with fake data %@", error);
+        }
+    }
+    
+    
+    error = nil;
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        NSString *failureReason = @"There was an error creating or loading the application's saved data.";
         dict[NSLocalizedFailureReasonErrorKey] = failureReason;
         dict[NSUnderlyingErrorKey] = error;
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        error = [NSError errorWithDomain:YaBTErrorDomain
+                                    code:0001
+                                userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

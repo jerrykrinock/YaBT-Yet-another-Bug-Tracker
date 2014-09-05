@@ -12,6 +12,7 @@ const struct BugRelationships BugRelationships = {
 	.blockees = @"blockees",
 	.blockers = @"blockers",
 	.details = @"details",
+	.product = @"product",
 };
 
 const struct BugFetchedProperties BugFetchedProperties = {
@@ -91,6 +92,10 @@ const struct BugFetchedProperties BugFetchedProperties = {
 	
 
 @dynamic details;
+
+	
+
+@dynamic product;
 
 	
 

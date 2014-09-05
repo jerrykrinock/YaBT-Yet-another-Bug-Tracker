@@ -5,7 +5,8 @@
 
 
 extern const struct DetailsAttributes {
-	__unsafe_unretained NSString *steps;
+	__unsafe_unretained NSString *commentary;
+	__unsafe_unretained NSString *severity;
 } DetailsAttributes;
 
 extern const struct DetailsRelationships {
@@ -16,6 +17,7 @@ extern const struct DetailsFetchedProperties {
 } DetailsFetchedProperties;
 
 @class Bug;
+
 
 
 
@@ -32,11 +34,25 @@ extern const struct DetailsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSString* steps;
+@property (nonatomic, strong) NSString* commentary;
 
 
 
-//- (BOOL)validateSteps:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateCommentary:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* severity;
+
+
+
+@property int16_t severityValue;
+- (int16_t)severityValue;
+- (void)setSeverityValue:(int16_t)value_;
+
+//- (BOOL)validateSeverity:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -59,8 +75,17 @@ extern const struct DetailsFetchedProperties {
 @interface _Details (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString*)primitiveSteps;
-- (void)setPrimitiveSteps:(NSString*)value;
+- (NSString*)primitiveCommentary;
+- (void)setPrimitiveCommentary:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveSeverity;
+- (void)setPrimitiveSeverity:(NSNumber*)value;
+
+- (int16_t)primitiveSeverityValue;
+- (void)setPrimitiveSeverityValue:(int16_t)value_;
 
 
 

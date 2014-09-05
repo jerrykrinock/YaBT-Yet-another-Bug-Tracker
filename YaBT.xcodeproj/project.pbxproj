@@ -21,14 +21,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4821FD1019B0F1A80076F617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD0F19B0F1A80076F617 /* main.m */; };
+		4821FD1019B0F1A80076F617 /* iOSApp-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD0F19B0F1A80076F617 /* iOSApp-Main.m */; };
 		4821FD1319B0F1A80076F617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1219B0F1A80076F617 /* AppDelegate.m */; };
 		4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */; };
-		4821FD1919B0F1A80076F617 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1819B0F1A80076F617 /* MasterViewController.m */; };
-		4821FD1C19B0F1A80076F617 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1B19B0F1A80076F617 /* DetailViewController.m */; };
-		4821FD1F19B0F1A80076F617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD1D19B0F1A80076F617 /* Main.storyboard */; };
+		4821FD1919B0F1A80076F617 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1819B0F1A80076F617 /* ProductsViewController.m */; };
+		4821FD1C19B0F1A80076F617 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1B19B0F1A80076F617 /* ProductViewController.m */; };
 		4821FD2119B0F1A80076F617 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD2019B0F1A80076F617 /* Images.xcassets */; };
 		4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD2C19B0F1A90076F617 /* YaBTTests.m */; };
+		484A2D3419B5F0AC00D06D6A /* MakeFake-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D3319B5F0AC00D06D6A /* MakeFake-Main.m */; };
+		484A2D3819B5F23400D06D6A /* _Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF419B20DE900861763 /* _Bug.m */; };
+		484A2D3919B5F23400D06D6A /* _Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF619B20DE900861763 /* _Details.m */; };
+		484A2D3A19B5F23400D06D6A /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
+		484A2D3B19B5F23400D06D6A /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
+		484A2D3C19B5F24900D06D6A /* YaBT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */; };
+		484A2D3F19B63B2100D06D6A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D3E19B63B2100D06D6A /* Product.m */; };
+		484A2D4019B63B2100D06D6A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D3E19B63B2100D06D6A /* Product.m */; };
+		484A2D4319B63B3600D06D6A /* _Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D4219B63B3600D06D6A /* _Product.m */; };
+		484A2D4419B63B3600D06D6A /* _Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D4219B63B3600D06D6A /* _Product.m */; };
+		484A2D4619B65C4800D06D6A /* FakeData.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 484A2D4519B65C3E00D06D6A /* FakeData.plist */; };
+		484A2D4819B6A6DD00D06D6A /* FakeData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 484A2D4719B6A6DD00D06D6A /* FakeData.sqlite */; };
+		484A2D4919B6A83E00D06D6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD1D19B0F1A80076F617 /* Main.storyboard */; };
 		48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 		48AD9CFB19B20DE900861763 /* _Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF419B20DE900861763 /* _Bug.m */; };
 		48AD9CFC19B20DE900861763 /* _Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF419B20DE900861763 /* _Bug.m */; };
@@ -38,6 +50,7 @@
 		48AD9D0019B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
 		48AD9D0119B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
 		48AD9D0219B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
+		48E1AE7219B592F700AF3843 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,22 +63,52 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		484A2D2F19B5F0AB00D06D6A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				484A2D4619B65C4800D06D6A /* FakeData.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4821FD0A19B0F1A80076F617 /* YaBT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaBT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4821FD0E19B0F1A80076F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4821FD0F19B0F1A80076F617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4821FD0E19B0F1A80076F617 /* iOSApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSApp-Info.plist"; sourceTree = "<group>"; };
+		4821FD0F19B0F1A80076F617 /* iOSApp-Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "iOSApp-Main.m"; sourceTree = "<group>"; };
 		4821FD1119B0F1A80076F617 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4821FD1219B0F1A80076F617 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4821FD1519B0F1A80076F617 /* YaBT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YaBT.xcdatamodel; sourceTree = "<group>"; };
-		4821FD1719B0F1A80076F617 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		4821FD1819B0F1A80076F617 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		4821FD1A19B0F1A80076F617 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4821FD1B19B0F1A80076F617 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4821FD1719B0F1A80076F617 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		4821FD1819B0F1A80076F617 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		4821FD1A19B0F1A80076F617 /* ProductViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		4821FD1B19B0F1A80076F617 /* ProductViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		4821FD1E19B0F1A80076F617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4821FD2019B0F1A80076F617 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4821FD2619B0F1A90076F617 /* YaBTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YaBTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4821FD2B19B0F1A90076F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4821FD2C19B0F1A90076F617 /* YaBTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YaBTTests.m; sourceTree = "<group>"; };
+		484A2D3119B5F0AB00D06D6A /* MakeFakeDB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MakeFakeDB; sourceTree = BUILT_PRODUCTS_DIR; };
+		484A2D3319B5F0AC00D06D6A /* MakeFake-Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MakeFake-Main.m"; path = "../PlaceholderDB/MakeFake-Main.m"; sourceTree = "<group>"; };
+		484A2D3D19B63B2100D06D6A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		484A2D3E19B63B2100D06D6A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		484A2D4119B63B3600D06D6A /* _Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Product.h; sourceTree = "<group>"; };
+		484A2D4219B63B3600D06D6A /* _Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Product.m; sourceTree = "<group>"; };
+		484A2D4519B65C3E00D06D6A /* FakeData.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = FakeData.plist; sourceTree = "<group>"; };
+		484A2D4719B6A6DD00D06D6A /* FakeData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = FakeData.sqlite; path = "../../../../../Library/Developer/Xcode/DerivedData/YaBT-dhvwljizpucjljekkbhdzoswnxqn/Build/Products/Debug/FakeData.sqlite"; sourceTree = "<group>"; };
+		48734E4619B94D41001D16AD /* Foo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foo.xcdatamodel; sourceTree = "<group>"; };
+		48734E4719B94D41001D16AD /* _Foo(mogenerator).h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "_Foo(mogenerator).h"; path = "mogenerator-Xcode-Compare/_Foo(mogenerator).h"; sourceTree = "<group>"; };
+		48734E4819B94D41001D16AD /* _Foo(mogenerator).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "_Foo(mogenerator).m"; path = "mogenerator-Xcode-Compare/_Foo(mogenerator).m"; sourceTree = "<group>"; };
+		48734E4919B94D41001D16AD /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; name = .DS_Store; path = "mogenerator-Xcode-Compare/.DS_Store"; sourceTree = "<group>"; };
+		48734E4A19B94D41001D16AD /* Foo(mogenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Foo(mogenerator.h"; path = "mogenerator-Xcode-Compare/Foo(mogenerator.h"; sourceTree = "<group>"; };
+		48734E4B19B94D41001D16AD /* Foo(mogenerator).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Foo(mogenerator).m"; path = "mogenerator-Xcode-Compare/Foo(mogenerator).m"; sourceTree = "<group>"; };
+		48734E4C19B94D41001D16AD /* Foo(Xcode).h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Foo(Xcode).h"; path = "mogenerator-Xcode-Compare/Foo(Xcode).h"; sourceTree = "<group>"; };
+		48734E4D19B94D41001D16AD /* Foo(Xcode).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Foo(Xcode).m"; path = "mogenerator-Xcode-Compare/Foo(Xcode).m"; sourceTree = "<group>"; };
+		48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YaBT-Bridging-Header.h"; path = "mogenerator-Xcode-Compare/YaBT-Bridging-Header.h"; sourceTree = "<group>"; };
 		48AD9CD919B12BC300861763 /* YaBTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaBTGlobals.h; sourceTree = "<group>"; };
 		48AD9CDA19B12BC300861763 /* YaBTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaBTGlobals.m; sourceTree = "<group>"; };
 		48AD9CF319B20DE900861763 /* _Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Bug.h; sourceTree = "<group>"; };
@@ -76,7 +119,6 @@
 		48AD9CF819B20DE900861763 /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
 		48AD9CF919B20DE900861763 /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
 		48AD9CFA19B20DE900861763 /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
-		48E1AE5C19B5889C00AF3843 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +136,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		484A2D2E19B5F0AB00D06D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4821FD0119B0F1A80076F617 = {
 			isa = PBXGroup;
 			children = (
+				48734E4419B94D26001D16AD /* mogenerator-Xcode-Compare */,
 				4821FD0C19B0F1A80076F617 /* YaBT */,
 				4821FD2919B0F1A90076F617 /* YaBTTests */,
-				48E1AE5B19B5889C00AF3843 /* YaBT-DemoDBMaker */,
 				4821FD0B19B0F1A80076F617 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +161,7 @@
 			children = (
 				4821FD0A19B0F1A80076F617 /* YaBT.app */,
 				4821FD2619B0F1A90076F617 /* YaBTTests.xctest */,
+				484A2D3119B5F0AB00D06D6A /* MakeFakeDB */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,30 +169,25 @@
 		4821FD0C19B0F1A80076F617 /* YaBT */ = {
 			isa = PBXGroup;
 			children = (
-				48AD9CF219B20DE900861763 /* Mogenerated */,
-				4821FD1119B0F1A80076F617 /* AppDelegate.h */,
-				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
-				4821FD1719B0F1A80076F617 /* MasterViewController.h */,
-				4821FD1819B0F1A80076F617 /* MasterViewController.m */,
-				4821FD1A19B0F1A80076F617 /* DetailViewController.h */,
-				4821FD1B19B0F1A80076F617 /* DetailViewController.m */,
+				4821FD0E19B0F1A80076F617 /* iOSApp-Info.plist */,
+				4821FD0F19B0F1A80076F617 /* iOSApp-Main.m */,
+				484A2D3319B5F0AC00D06D6A /* MakeFake-Main.m */,
 				4821FD1D19B0F1A80076F617 /* Main.storyboard */,
 				4821FD2019B0F1A80076F617 /* Images.xcassets */,
-				4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */,
 				48AD9CD919B12BC300861763 /* YaBTGlobals.h */,
 				48AD9CDA19B12BC300861763 /* YaBTGlobals.m */,
-				4821FD0D19B0F1A80076F617 /* Supporting Files */,
+				484A2D4519B65C3E00D06D6A /* FakeData.plist */,
+				484A2D4719B6A6DD00D06D6A /* FakeData.sqlite */,
+				4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */,
+				4821FD1119B0F1A80076F617 /* AppDelegate.h */,
+				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
+				4821FD1719B0F1A80076F617 /* ProductsViewController.h */,
+				4821FD1819B0F1A80076F617 /* ProductsViewController.m */,
+				4821FD1A19B0F1A80076F617 /* ProductViewController.h */,
+				4821FD1B19B0F1A80076F617 /* ProductViewController.m */,
+				48AD9CF219B20DE900861763 /* Mogenerated */,
 			);
 			path = YaBT;
-			sourceTree = "<group>";
-		};
-		4821FD0D19B0F1A80076F617 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4821FD0E19B0F1A80076F617 /* Info.plist */,
-				4821FD0F19B0F1A80076F617 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4821FD2919B0F1A90076F617 /* YaBTTests */ = {
@@ -162,6 +207,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		48734E4419B94D26001D16AD /* mogenerator-Xcode-Compare */ = {
+			isa = PBXGroup;
+			children = (
+				48734E4519B94D41001D16AD /* Foo.xcdatamodeld */,
+				48734E4719B94D41001D16AD /* _Foo(mogenerator).h */,
+				48734E4819B94D41001D16AD /* _Foo(mogenerator).m */,
+				48734E4919B94D41001D16AD /* .DS_Store */,
+				48734E4A19B94D41001D16AD /* Foo(mogenerator.h */,
+				48734E4B19B94D41001D16AD /* Foo(mogenerator).m */,
+				48734E4C19B94D41001D16AD /* Foo(Xcode).h */,
+				48734E4D19B94D41001D16AD /* Foo(Xcode).m */,
+				48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */,
+			);
+			name = "mogenerator-Xcode-Compare";
+			sourceTree = "<group>";
+		};
 		48AD9CF219B20DE900861763 /* Mogenerated */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,20 +230,16 @@
 				48AD9CF419B20DE900861763 /* _Bug.m */,
 				48AD9CF519B20DE900861763 /* _Details.h */,
 				48AD9CF619B20DE900861763 /* _Details.m */,
+				484A2D4119B63B3600D06D6A /* _Product.h */,
+				484A2D4219B63B3600D06D6A /* _Product.m */,
 				48AD9CF719B20DE900861763 /* Bug.h */,
 				48AD9CF819B20DE900861763 /* Bug.m */,
 				48AD9CF919B20DE900861763 /* Details.h */,
 				48AD9CFA19B20DE900861763 /* Details.m */,
+				484A2D3D19B63B2100D06D6A /* Product.h */,
+				484A2D3E19B63B2100D06D6A /* Product.m */,
 			);
 			path = Mogenerated;
-			sourceTree = "<group>";
-		};
-		48E1AE5B19B5889C00AF3843 /* YaBT-DemoDBMaker */ = {
-			isa = PBXGroup;
-			children = (
-				48E1AE5C19B5889C00AF3843 /* main.m */,
-			);
-			path = "YaBT-DemoDBMaker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +280,23 @@
 			productReference = 4821FD2619B0F1A90076F617 /* YaBTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		484A2D3019B5F0AB00D06D6A /* MakeFakeDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 484A2D3719B5F0AC00D06D6A /* Build configuration list for PBXNativeTarget "MakeFakeDB" */;
+			buildPhases = (
+				484A2D2D19B5F0AB00D06D6A /* Sources */,
+				484A2D2E19B5F0AB00D06D6A /* Frameworks */,
+				484A2D2F19B5F0AB00D06D6A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MakeFakeDB;
+			productName = PlaceholderDB;
+			productReference = 484A2D3119B5F0AB00D06D6A /* MakeFakeDB */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +312,9 @@
 					4821FD2519B0F1A90076F617 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 4821FD0919B0F1A80076F617;
+					};
+					484A2D3019B5F0AB00D06D6A = {
+						CreatedOnToolsVersion = 6.0;
 					};
 					48AD9CEA19B20BE700861763 = {
 						CreatedOnToolsVersion = 6.0;
@@ -260,6 +337,7 @@
 				4821FD0919B0F1A80076F617 /* YaBT */,
 				4821FD2519B0F1A90076F617 /* YaBTTests */,
 				48AD9CEA19B20BE700861763 /* Mogenerator */,
+				484A2D3019B5F0AB00D06D6A /* MakeFakeDB */,
 			);
 		};
 /* End PBXProject section */
@@ -269,8 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4821FD1F19B0F1A80076F617 /* Main.storyboard in Resources */,
+				484A2D4919B6A83E00D06D6A /* Main.storyboard in Resources */,
 				4821FD2119B0F1A80076F617 /* Images.xcassets in Resources */,
+				484A2D4819B6A6DD00D06D6A /* FakeData.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,15 +384,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
-				4821FD1C19B0F1A80076F617 /* DetailViewController.m in Sources */,
+				484A2D4319B63B3600D06D6A /* _Product.m in Sources */,
+				4821FD1C19B0F1A80076F617 /* ProductViewController.m in Sources */,
+				484A2D3F19B63B2100D06D6A /* Product.m in Sources */,
 				48AD9D0119B20DE900861763 /* Details.m in Sources */,
 				48AD9CFD19B20DE900861763 /* _Details.m in Sources */,
-				4821FD1919B0F1A80076F617 /* MasterViewController.m in Sources */,
+				4821FD1919B0F1A80076F617 /* ProductsViewController.m in Sources */,
 				4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */,
 				48AD9CFB19B20DE900861763 /* _Bug.m in Sources */,
 				48AD9CFF19B20DE900861763 /* Bug.m in Sources */,
 				4821FD1319B0F1A80076F617 /* AppDelegate.m in Sources */,
-				4821FD1019B0F1A80076F617 /* main.m in Sources */,
+				4821FD1019B0F1A80076F617 /* iOSApp-Main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,11 +402,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E1AE7219B592F700AF3843 /* YaBTGlobals.m in Sources */,
 				48AD9CFC19B20DE900861763 /* _Bug.m in Sources */,
 				4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */,
 				48AD9D0219B20DE900861763 /* Details.m in Sources */,
 				48AD9D0019B20DE900861763 /* Bug.m in Sources */,
 				48AD9CFE19B20DE900861763 /* _Details.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		484A2D2D19B5F0AB00D06D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				484A2D4019B63B2100D06D6A /* Product.m in Sources */,
+				484A2D3819B5F23400D06D6A /* _Bug.m in Sources */,
+				484A2D3419B5F0AC00D06D6A /* MakeFake-Main.m in Sources */,
+				484A2D3B19B5F23400D06D6A /* Details.m in Sources */,
+				484A2D3C19B5F24900D06D6A /* YaBT.xcdatamodeld in Sources */,
+				484A2D4419B63B3600D06D6A /* _Product.m in Sources */,
+				484A2D3A19B5F23400D06D6A /* Bug.m in Sources */,
+				484A2D3919B5F23400D06D6A /* _Details.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +529,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = YaBT/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "YaBT/iOSApp-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YaBT-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -443,9 +543,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = YaBT/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "YaBT/iOSApp-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YaBT-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -480,6 +582,29 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YaBT.app/YaBT";
+			};
+			name = Release;
+		};
+		484A2D3519B5F0AC00D06D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		484A2D3619B5F0AC00D06D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -527,6 +652,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		484A2D3719B5F0AC00D06D6A /* Build configuration list for PBXNativeTarget "MakeFakeDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				484A2D3519B5F0AC00D06D6A /* Debug */,
+				484A2D3619B5F0AC00D06D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		48AD9CED19B20BE700861763 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -546,6 +680,17 @@
 			);
 			currentVersion = 4821FD1519B0F1A80076F617 /* YaBT.xcdatamodel */;
 			path = YaBT.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		48734E4519B94D41001D16AD /* Foo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48734E4619B94D41001D16AD /* Foo.xcdatamodel */,
+			);
+			currentVersion = 48734E4619B94D41001D16AD /* Foo.xcdatamodel */;
+			name = Foo.xcdatamodeld;
+			path = "mogenerator-Xcode-Compare/Foo.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

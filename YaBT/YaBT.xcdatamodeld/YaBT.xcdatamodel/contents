@@ -8,14 +8,21 @@
         <relationship name="blockees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="blockers" inverseEntity="Bug" syncable="YES"/>
         <relationship name="blockers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="blockees" inverseEntity="Bug" syncable="YES"/>
         <relationship name="details" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Details" inverseName="bug" inverseEntity="Details" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="bugs" inverseEntity="Product" syncable="YES"/>
         <userInfo/>
     </entity>
     <entity name="Details" representedClassName="Details" syncable="YES">
-        <attribute name="steps" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="severity" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="5" defaultValueString="1" syncable="YES"/>
         <relationship name="bug" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bug" inverseName="details" inverseEntity="Bug" syncable="YES"/>
     </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Bug" inverseName="product" inverseEntity="Bug" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Bug" positionX="261" positionY="180" width="128" height="118"/>
-        <element name="Details" positionX="466" positionY="224" width="128" height="73"/>
+        <element name="Product" positionX="-279" positionY="221" width="128" height="73"/>
+        <element name="Bug" positionX="-90" positionY="180" width="128" height="135"/>
+        <element name="Details" positionX="144" positionY="227" width="128" height="88"/>
     </elements>
 </model>

@@ -4,7 +4,8 @@
 #import "_Details.h"
 
 const struct DetailsAttributes DetailsAttributes = {
-	.steps = @"steps",
+	.commentary = @"commentary",
+	.severity = @"severity",
 };
 
 const struct DetailsRelationships DetailsRelationships = {
@@ -40,6 +41,11 @@ const struct DetailsFetchedProperties DetailsFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
+	if ([key isEqualToString:@"severityValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"severity"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 
 	return keyPaths;
 }
@@ -47,8 +53,34 @@ const struct DetailsFetchedProperties DetailsFetchedProperties = {
 
 
 
-@dynamic steps;
+@dynamic commentary;
 
+
+
+
+
+
+@dynamic severity;
+
+
+
+- (int16_t)severityValue {
+	NSNumber *result = [self severity];
+	return [result shortValue];
+}
+
+- (void)setSeverityValue:(int16_t)value_ {
+	[self setSeverity:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveSeverityValue {
+	NSNumber *result = [self primitiveSeverity];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveSeverityValue:(int16_t)value_ {
+	[self setPrimitiveSeverity:[NSNumber numberWithShort:value_]];
+}
 
 
 
