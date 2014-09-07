@@ -1,28 +1,43 @@
-#import "ProductsViewController.h"
 #import "BugsViewController.h"
-#import "Product.h"
 #import "YaBTGlobals.h"
+#import "AppDelegate.h"
+#import "Product.h"
+#import "Bug.h"
 
-@interface ProductsViewController ()
+@interface BugsViewController ()
 
 @end
 
-@implementation ProductsViewController
+@implementation BugsViewController
+
+#pragma mark - Managing the detail item
+
+- (void)setProduct:(Product*)product {
+   if (_product != product) {
+        _product = product;
             
-- (void)awakeFromNib {
-    [super awakeFromNib];
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.product) {
+        self.navigationItem.title = [@"Bugs in " stringByAppendingString:[[self product] name]] ;
+    }
+    
+    if (![self managedObjectContext]) {
+        NSManagedObjectContext* moc = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] ;
+        [self setManagedObjectContext:moc];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self configureView];
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                               target:self
-                                                                               action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -32,59 +47,38 @@
     }
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload] ;
-    // This allows iOS to free up memory in low-memory conditions
-    self.fetchedResultsController = nil;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    [Product insertInManagedObjectContext:context];
-        
-    // You could set some default attributes on the Product which is returned
-    // from the above message.
-        
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
-
-#pragma mark - Segues
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showBugs"]) {
+    if ([[segue identifier] isEqualToString:@"showBug"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Product *product = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setProduct:product];
+        NSFetchedResultsController* frc = [self fetchedResultsController] ;
+        Bug *bug = [frc objectAtIndexPath:indexPath];
+//        [[segue destinationViewController] setBug:bug];
     }
 }
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchedResultsController sections] count];
+    NSInteger n = [[self.fetchedResultsController sections] count] ;
+    return n;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     NSInteger n = [sectionInfo numberOfObjects] ;
     return n;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell"
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BugCell"
                                                             forIndexPath:indexPath];
     [self configureCell:cell
             atIndexPath:indexPath];
@@ -102,7 +96,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-            
+        
         NSError *error = nil;
         if (![context save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
@@ -115,12 +109,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell
           atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[NSString alloc] initWithFormat:
-                           @"%@ (%ld bugs)",
-                           [object valueForKey:ProductAttributes.name],
-                           (long)[[object valueForKey:ProductRelationships.bugs] count]
-                           ] ;
+    Bug* bug = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [bug title];
 }
 
 #pragma mark - Fetched results controller
@@ -130,15 +120,20 @@
     if (_fetchedResultsController == nil) {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         // Edit the entity name as appropriate.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Product"
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Bug"
                                                   inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
         
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:
+                                  @"ANY products == %@",
+                                  self.product] ;
+        [fetchRequest setPredicate:predicate] ;
+
         // Set  batch size to a few more than could fit on the largest screen.
         [fetchRequest setFetchBatchSize:20];
         
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:ProductAttributes.name
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:BugAttributes.title
                                             // that could also be a key path
                                                                        ascending:YES];
         NSArray *sortDescriptors = @[sortDescriptor];
@@ -148,14 +143,14 @@
         NSFetchedResultsController *frc ;
         frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                   managedObjectContext:self.managedObjectContext
-            /* Only 1 secion */                     sectionNameKeyPath:nil
-            /* Filename of cache */                          cacheName:@"Master"];
+               /* Only 1 secion */                  sectionNameKeyPath:nil
+               /* Filename of cache */                       cacheName:nil];
         frc.delegate = self;
-        self.fetchedResultsController = frc;
+        [self setFetchedResultsController:frc];
     }
     
     return _fetchedResultsController;
-}    
+}
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -225,7 +220,7 @@
  changes are made simultaneously. If this proves to be an issue, you can
  instead just implement controllerDidChangeContent: which notifies the delegate
  that all section and object changes have been processed.
-*/
+ */
 #if 0
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {

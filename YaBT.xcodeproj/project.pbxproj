@@ -25,7 +25,7 @@
 		4821FD1319B0F1A80076F617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1219B0F1A80076F617 /* AppDelegate.m */; };
 		4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */; };
 		4821FD1919B0F1A80076F617 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1819B0F1A80076F617 /* ProductsViewController.m */; };
-		4821FD1C19B0F1A80076F617 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1B19B0F1A80076F617 /* ProductViewController.m */; };
+		4821FD1C19B0F1A80076F617 /* BugsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD1B19B0F1A80076F617 /* BugsViewController.m */; };
 		4821FD2119B0F1A80076F617 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4821FD2019B0F1A80076F617 /* Images.xcassets */; };
 		4821FD2D19B0F1A90076F617 /* YaBTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4821FD2C19B0F1A90076F617 /* YaBTTests.m */; };
 		484A2D3419B5F0AC00D06D6A /* MakeFake-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 484A2D3319B5F0AC00D06D6A /* MakeFake-Main.m */; };
@@ -85,8 +85,8 @@
 		4821FD1519B0F1A80076F617 /* YaBT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YaBT.xcdatamodel; sourceTree = "<group>"; };
 		4821FD1719B0F1A80076F617 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
 		4821FD1819B0F1A80076F617 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
-		4821FD1A19B0F1A80076F617 /* ProductViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
-		4821FD1B19B0F1A80076F617 /* ProductViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		4821FD1A19B0F1A80076F617 /* BugsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BugsViewController.h; sourceTree = "<group>"; };
+		4821FD1B19B0F1A80076F617 /* BugsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BugsViewController.m; sourceTree = "<group>"; };
 		4821FD1E19B0F1A80076F617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4821FD2019B0F1A80076F617 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4821FD2619B0F1A90076F617 /* YaBTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YaBTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,8 +183,8 @@
 				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
 				4821FD1719B0F1A80076F617 /* ProductsViewController.h */,
 				4821FD1819B0F1A80076F617 /* ProductsViewController.m */,
-				4821FD1A19B0F1A80076F617 /* ProductViewController.h */,
-				4821FD1B19B0F1A80076F617 /* ProductViewController.m */,
+				4821FD1A19B0F1A80076F617 /* BugsViewController.h */,
+				4821FD1B19B0F1A80076F617 /* BugsViewController.m */,
 				48AD9CF219B20DE900861763 /* Mogenerated */,
 			);
 			path = YaBT;
@@ -385,7 +385,7 @@
 			files = (
 				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
 				484A2D4319B63B3600D06D6A /* _Product.m in Sources */,
-				4821FD1C19B0F1A80076F617 /* ProductViewController.m in Sources */,
+				4821FD1C19B0F1A80076F617 /* BugsViewController.m in Sources */,
 				484A2D3F19B63B2100D06D6A /* Product.m in Sources */,
 				48AD9D0119B20DE900861763 /* Details.m in Sources */,
 				48AD9CFD19B20DE900861763 /* _Details.m in Sources */,

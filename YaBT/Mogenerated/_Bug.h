@@ -13,7 +13,7 @@ extern const struct BugRelationships {
 	__unsafe_unretained NSString *blockees;
 	__unsafe_unretained NSString *blockers;
 	__unsafe_unretained NSString *details;
-	__unsafe_unretained NSString *product;
+	__unsafe_unretained NSString *products;
 } BugRelationships;
 
 extern const struct BugFetchedProperties {
@@ -81,9 +81,9 @@ extern const struct BugFetchedProperties {
 
 
 
-@property (nonatomic, strong) Product *product;
+@property (nonatomic, strong) NSSet *products;
 
-//- (BOOL)validateProduct:(id*)value_ error:(NSError**)error_;
+- (NSMutableSet*)productsSet;
 
 
 
@@ -102,6 +102,11 @@ extern const struct BugFetchedProperties {
 - (void)removeBlockers:(NSSet*)value_;
 - (void)addBlockersObject:(Bug*)value_;
 - (void)removeBlockersObject:(Bug*)value_;
+
+- (void)addProducts:(NSSet*)value_;
+- (void)removeProducts:(NSSet*)value_;
+- (void)addProductsObject:(Product*)value_;
+- (void)removeProductsObject:(Product*)value_;
 
 @end
 
@@ -136,8 +141,8 @@ extern const struct BugFetchedProperties {
 
 
 
-- (Product*)primitiveProduct;
-- (void)setPrimitiveProduct:(Product*)value;
+- (NSMutableSet*)primitiveProducts;
+- (void)setPrimitiveProducts:(NSMutableSet*)value;
 
 
 @end

@@ -12,7 +12,7 @@ const struct BugRelationships BugRelationships = {
 	.blockees = @"blockees",
 	.blockers = @"blockers",
 	.details = @"details",
-	.product = @"product",
+	.products = @"products",
 };
 
 const struct BugFetchedProperties BugFetchedProperties = {
@@ -95,8 +95,17 @@ const struct BugFetchedProperties BugFetchedProperties = {
 
 	
 
-@dynamic product;
+@dynamic products;
 
+	
+- (NSMutableSet*)productsSet {
+	[self willAccessValueForKey:@"products"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"products"];
+  
+	[self didAccessValueForKey:@"products"];
+	return result;
+}
 	
 
 

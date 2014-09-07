@@ -101,25 +101,44 @@ int main(int argc, const char * argv[])
                                                                     options:NSPropertyListImmutable
                                                                      format:NULL
                                                                       error:&error];
-        NSArray *bugs = [productsAndBugs objectForKey:@"BugsAndDetails"];
-        [bugs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSArray *bugsInfos = [productsAndBugs objectForKey:@"BugsAndDetails"];
+        NSMutableDictionary* bugsByTitle = [[NSMutableDictionary alloc] initWithCapacity:[bugsInfos count]] ;
+        [bugsInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 #if NO_MOGENERATOR
             Bug *bug = [NSEntityDescription insertNewObjectForEntityForName:@"Bug"
                                                      inManagedObjectContext:context];
 #else
             Bug *bug = [Bug insertInManagedObjectContext:context];
 #endif
-            bug.title = [obj objectForKey:BugAttributes.title];
+            NSString* title = [obj objectForKey:BugAttributes.title];
+            bug.title = title;
             bug.timestamp = [obj objectForKey:BugAttributes.timestamp];
+            [bugsByTitle setObject:bug
+                            forKey:title] ;
 
             Details *details = [Details insertInManagedObjectContext:context];
             details.commentary = [obj objectForKey:DetailsAttributes.commentary];
         }];
 
-        NSArray *products = [productsAndBugs objectForKey:@"Products"];
-        [products enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSArray *productInfos = [productsAndBugs objectForKey:@"Products"];
+        [productInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             Product *product = [Product insertInManagedObjectContext:context];
             product.name = [obj objectForKey:ProductAttributes.name];
+            NSArray* bugTitles = [obj objectForKey:ProductRelationships.bugs] ;
+            for (NSString* bugTitle in bugTitles) {
+                Bug* bug = [bugsByTitle objectForKey:bugTitle] ;
+                if (bug) {
+                    [bug addProductsObject:product] ;
+                    // Do not set the inverse relationship, because Core Data
+                    // does it for you!
+                    // [product addBugsObject:bug] ;
+                }
+                else {
+                    NSLog(@"Error.  Product '%@' has unlisted bug '%@'",
+                          product.name,
+                          bugTitle) ;
+                }
+            }
         }];
         
         if (![context save:&error]) {

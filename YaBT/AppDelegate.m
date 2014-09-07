@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
-#import "ProductViewController.h"
+#import "BugsViewController.h"
 #import "ProductsViewController.h"
+#import "BugsViewController.h"
 #import "YaBTGlobals.h"
 
 @interface AppDelegate ()
@@ -12,9 +13,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    // Set managed object context for products view controller
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    ProductsViewController *controller = (ProductsViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    ProductsViewController *pvc = (ProductsViewController *)navigationController.topViewController;
+    [pvc setManagedObjectContext:[self managedObjectContext]];
+
     return YES;
 }
 
@@ -81,7 +85,6 @@
         NSURL *fakeDataURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"FakeData"
                                                                                    ofType:@"sqlite"]];
         
-        /*SSYDBL*/ NSLog(@"Copied fake data store from %@", fakeDataURL) ;
         if (![[NSFileManager defaultManager] copyItemAtURL:fakeDataURL
                                                      toURL:storeURL
                                                      error:&error]) {
