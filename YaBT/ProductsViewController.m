@@ -45,16 +45,25 @@
 
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    [Product insertInManagedObjectContext:context];
-        
-    // You could set some default attributes on the Product which is returned
-    // from the above message.
-        
-    // Save the context.
+
+    Product* product = [Product insertInManagedObjectContext:context];
+    [product setName:@"New Main"] ;
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+#if 1
+        Product* product = [Product insertInManagedObjectContext:context];
+        [product setName:@"New Non-Main"] ;
+#else
+        NSString* name = product.name ;
+        NSLog(@"We just created %@", name) ;
+#endif
+    });
+    
     NSError *error = nil;
     if (![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        // abort() causes the application to generate a crash log and terminate.
+        // You should not use this function in a shipping application.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }

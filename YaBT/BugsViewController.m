@@ -24,7 +24,13 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.product) {
-        self.navigationItem.title = [@"Bugs in " stringByAppendingString:[[self product] name]] ;
+        NSString* name = [[self product] name] ;
+        if (name) {
+            self.navigationItem.title = [@"Bugs in " stringByAppendingString:name] ;
+        }
+        else {
+            NSLog(@"Internal Error %s %ld", __PRETTY_FUNCTION__, (long)__LINE__) ;
+        }
     }
     
     if (![self managedObjectContext]) {
