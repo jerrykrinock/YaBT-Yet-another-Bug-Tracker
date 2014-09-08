@@ -50,6 +50,7 @@
 		48AD9D0019B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
 		48AD9D0119B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
 		48AD9D0219B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
+		48D8AF8119BE111500AE7B4D /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8AF8019BE111500AE7B4D /* CoreDataStack.m */; };
 		48E1AE7219B592F700AF3843 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,8 @@
 		48AD9CF819B20DE900861763 /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
 		48AD9CF919B20DE900861763 /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
 		48AD9CFA19B20DE900861763 /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
+		48D8AF7F19BE111500AE7B4D /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		48D8AF8019BE111500AE7B4D /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				4821FD1419B0F1A80076F617 /* YaBT.xcdatamodeld */,
 				4821FD1119B0F1A80076F617 /* AppDelegate.h */,
 				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
+				48D8AF7F19BE111500AE7B4D /* CoreDataStack.h */,
+				48D8AF8019BE111500AE7B4D /* CoreDataStack.m */,
 				4821FD1719B0F1A80076F617 /* ProductsViewController.h */,
 				4821FD1819B0F1A80076F617 /* ProductsViewController.m */,
 				4821FD1A19B0F1A80076F617 /* BugsViewController.h */,
@@ -385,6 +390,7 @@
 			files = (
 				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
 				484A2D4319B63B3600D06D6A /* _Product.m in Sources */,
+				48D8AF8119BE111500AE7B4D /* CoreDataStack.m in Sources */,
 				4821FD1C19B0F1A80076F617 /* BugsViewController.m in Sources */,
 				484A2D3F19B63B2100D06D6A /* Product.m in Sources */,
 				48AD9D0119B20DE900861763 /* Details.m in Sources */,

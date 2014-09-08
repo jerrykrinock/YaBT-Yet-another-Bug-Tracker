@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "Product.h"
 #import "Bug.h"
+#import "CoreDataStack.h"
 
 @interface BugsViewController ()
 
@@ -34,7 +35,9 @@
     }
     
     if (![self managedObjectContext]) {
-        NSManagedObjectContext* moc = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] ;
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        CoreDataStack* coreDataStack = [appDelegate coreDataStack];
+        NSManagedObjectContext* moc = [coreDataStack managedObjectContext];
         [self setManagedObjectContext:moc];
     }
 }
@@ -61,10 +64,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showBug"]) {
+#if 0
+        // This code is a todo
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSFetchedResultsController* frc = [self fetchedResultsController] ;
         Bug *bug = [frc objectAtIndexPath:indexPath];
-//        [[segue destinationViewController] setBug:bug];
+        [[segue destinationViewController] setBug:bug];
+#endif
     }
 }
 
