@@ -16,22 +16,6 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (id)init {
-    self = [super init] ;
-    if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(contextDidSave:)
-                                                     name:NSManagedObjectContextDidSaveNotification
-                                                   object:nil] ;
-    }
-    
-    return self ;
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self] ;
-}
-
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.sheepsystems.YaBT" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -56,7 +40,6 @@
     NSError* error = nil;
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"YaBT.sqlite"];
     
@@ -74,7 +57,11 @@
     
     
     error = nil;
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                   configuration:nil
+                                                             URL:storeURL
+                                                         options:nil
+                                                           error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
@@ -117,6 +104,8 @@
 - (NSManagedObjectContext *)mainContext {
     if (!_mainContext) {
         _mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType] ;
+        // Because this is not a root context, instead of
+        //   setting a psc, we set a parentContext
         [_mainContext setParentContext:[self rootContext]] ;
         [_mainContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy] ;
         [_mainContext setName:@"Main-Context"] ;
@@ -137,6 +126,22 @@
 }
 
 
+- (id)init {
+    self = [super init] ;
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:nil] ;
+    }
+    
+    return self ;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self] ;
+}
+
 - (void)contextDidSave:(NSNotification*)note {
     NSManagedObjectContext* savedContext = [note object] ;
     /*SSYDBL*/ NSLog(@"Context %@ did save", [savedContext name]) ;
@@ -144,19 +149,6 @@
     if (parentContext) {
         [self saveContext:parentContext] ;
     }
-}
-
-- (void)unsafeSaveContext:(NSManagedObjectContext *)context {
-    if ([context hasChanges]) {
-        NSError* error = nil ;
-        BOOL ok = [context save:&error] ;
-        if (!ok) {
-            // You'll do something better in a real app.
-            /*SSYDBL*/ NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-    else {/*SSYDBL*/ NSLog(@"Skipped saving unchanged context %@", [context name]) ; }
 }
 
 - (void)saveContext:(NSManagedObjectContext*)context {
@@ -170,6 +162,29 @@
         }];
 #endif
     }
+}
+
+- (void)unsafeSaveContext:(NSManagedObjectContext *)context {
+    if ([context hasChanges]) {
+        NSError* error = nil ;
+        BOOL ok ;
+        
+        ok = [context obtainPermanentIDsForObjects:[[context insertedObjects] allObjects]
+                                             error:&error] ;
+        if (!ok) {
+            // You'll do something better in a real app.
+            /*SSYDBL*/ NSLog(@"Error permanentizing %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        ok = [context save:&error] ;
+        if (!ok) {
+            // You'll do something better in a real app.
+            /*SSYDBL*/ NSLog(@"Error saving %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    else {/*SSYDBL*/ NSLog(@"Skipped saving unchanged context %@", [context name]) ; }
 }
 
 - (void)saveRootContext {

@@ -4,7 +4,7 @@
 #import "BugsViewController.h"
 #import "YaBTGlobals.h"
 #import "CoreDataStack.h"
-#import "Networker.h"
+#import "NetWorker.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +30,7 @@
     
     // Start a repeating timer which will simulate new objects arriving
     // from the network and merged into our Core Data store.
-    [Networker startWithInterval:20.0] ;
+    [NetWorker startWithInterval:20.0] ;
 
     return YES;
 }

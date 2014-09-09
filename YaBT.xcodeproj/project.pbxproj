@@ -50,7 +50,8 @@
 		48AD9D0019B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
 		48AD9D0119B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
 		48AD9D0219B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
-		48C757D719BEA3500082E0F3 /* Networker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C757D619BEA3500082E0F3 /* Networker.m */; };
+		48B789D319BF618C0015E159 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B789D219BF618C0015E159 /* CoreDataStack.swift */; };
+		48C757D719BEA3500082E0F3 /* NetWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C757D619BEA3500082E0F3 /* NetWorker.m */; };
 		48D8AF8119BE111500AE7B4D /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8AF8019BE111500AE7B4D /* CoreDataStack.m */; };
 		48E1AE7219B592F700AF3843 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 /* End PBXBuildFile section */
@@ -110,7 +111,7 @@
 		48734E4B19B94D41001D16AD /* Foo(mogenerator).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Foo(mogenerator).m"; path = "mogenerator-Xcode-Compare/Foo(mogenerator).m"; sourceTree = "<group>"; };
 		48734E4C19B94D41001D16AD /* Foo(Xcode).h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Foo(Xcode).h"; path = "mogenerator-Xcode-Compare/Foo(Xcode).h"; sourceTree = "<group>"; };
 		48734E4D19B94D41001D16AD /* Foo(Xcode).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Foo(Xcode).m"; path = "mogenerator-Xcode-Compare/Foo(Xcode).m"; sourceTree = "<group>"; };
-		48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YaBT-Bridging-Header.h"; path = "mogenerator-Xcode-Compare/YaBT-Bridging-Header.h"; sourceTree = "<group>"; };
+		48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YaBT-Bridging-Header.h"; path = "../YaBT-Bridging-Header.h"; sourceTree = "<group>"; };
 		48AD9CD919B12BC300861763 /* YaBTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaBTGlobals.h; sourceTree = "<group>"; };
 		48AD9CDA19B12BC300861763 /* YaBTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaBTGlobals.m; sourceTree = "<group>"; };
 		48AD9CF319B20DE900861763 /* _Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Bug.h; sourceTree = "<group>"; };
@@ -121,8 +122,9 @@
 		48AD9CF819B20DE900861763 /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
 		48AD9CF919B20DE900861763 /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
 		48AD9CFA19B20DE900861763 /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
-		48C757D519BEA3500082E0F3 /* Networker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networker.h; sourceTree = "<group>"; };
-		48C757D619BEA3500082E0F3 /* Networker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networker.m; sourceTree = "<group>"; };
+		48B789D219BF618C0015E159 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		48C757D519BEA3500082E0F3 /* NetWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorker.h; sourceTree = "<group>"; };
+		48C757D619BEA3500082E0F3 /* NetWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorker.m; sourceTree = "<group>"; };
 		48D8AF7F19BE111500AE7B4D /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		48D8AF8019BE111500AE7B4D /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +157,7 @@
 		4821FD0119B0F1A80076F617 = {
 			isa = PBXGroup;
 			children = (
-				48734E4419B94D26001D16AD /* mogenerator-Xcode-Compare */,
+				48734E4419B94D26001D16AD /* mogeneratorVsXcode (NOT USED) */,
 				4821FD0C19B0F1A80076F617 /* YaBT */,
 				4821FD2919B0F1A90076F617 /* YaBTTests */,
 				4821FD0B19B0F1A80076F617 /* Products */,
@@ -189,12 +191,14 @@
 				4821FD1219B0F1A80076F617 /* AppDelegate.m */,
 				48D8AF7F19BE111500AE7B4D /* CoreDataStack.h */,
 				48D8AF8019BE111500AE7B4D /* CoreDataStack.m */,
+				48B789D219BF618C0015E159 /* CoreDataStack.swift */,
 				4821FD1719B0F1A80076F617 /* ProductsViewController.h */,
 				4821FD1819B0F1A80076F617 /* ProductsViewController.m */,
 				4821FD1A19B0F1A80076F617 /* BugsViewController.h */,
 				4821FD1B19B0F1A80076F617 /* BugsViewController.m */,
-				48C757D519BEA3500082E0F3 /* Networker.h */,
-				48C757D619BEA3500082E0F3 /* Networker.m */,
+				48C757D519BEA3500082E0F3 /* NetWorker.h */,
+				48C757D619BEA3500082E0F3 /* NetWorker.m */,
+				48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */,
 				48AD9CF219B20DE900861763 /* Mogenerated */,
 			);
 			path = YaBT;
@@ -217,7 +221,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		48734E4419B94D26001D16AD /* mogenerator-Xcode-Compare */ = {
+		48734E4419B94D26001D16AD /* mogeneratorVsXcode (NOT USED) */ = {
 			isa = PBXGroup;
 			children = (
 				48734E4519B94D41001D16AD /* Foo.xcdatamodeld */,
@@ -228,9 +232,8 @@
 				48734E4B19B94D41001D16AD /* Foo(mogenerator).m */,
 				48734E4C19B94D41001D16AD /* Foo(Xcode).h */,
 				48734E4D19B94D41001D16AD /* Foo(Xcode).m */,
-				48734E4E19B94D41001D16AD /* YaBT-Bridging-Header.h */,
 			);
-			name = "mogenerator-Xcode-Compare";
+			name = "mogeneratorVsXcode (NOT USED)";
 			sourceTree = "<group>";
 		};
 		48AD9CF219B20DE900861763 /* Mogenerated */ = {
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B789D319BF618C0015E159 /* CoreDataStack.swift in Sources */,
 				48AD9CDB19B12BC300861763 /* YaBTGlobals.m in Sources */,
 				484A2D4319B63B3600D06D6A /* _Product.m in Sources */,
 				48D8AF8119BE111500AE7B4D /* CoreDataStack.m in Sources */,
@@ -401,7 +405,7 @@
 				48AD9D0119B20DE900861763 /* Details.m in Sources */,
 				48AD9CFD19B20DE900861763 /* _Details.m in Sources */,
 				4821FD1919B0F1A80076F617 /* ProductsViewController.m in Sources */,
-				48C757D719BEA3500082E0F3 /* Networker.m in Sources */,
+				48C757D719BEA3500082E0F3 /* NetWorker.m in Sources */,
 				4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */,
 				48AD9CFB19B20DE900861763 /* _Bug.m in Sources */,
 				48AD9CFF19B20DE900861763 /* Bug.m in Sources */,

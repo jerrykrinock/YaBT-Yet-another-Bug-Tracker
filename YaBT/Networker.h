@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface Networker : NSObject
+@interface NetWorker : NSObject
 
 + (void)startWithInterval:(NSTimeInterval)interval ;
 

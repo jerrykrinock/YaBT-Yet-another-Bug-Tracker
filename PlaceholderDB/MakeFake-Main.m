@@ -30,6 +30,7 @@ static NSURL *storeURL(void)
     return url;
 }
 
+/* This function creates a complete stack: PS, PSC, MOC */
 static NSManagedObjectContext *managedObjectContext()
 {
     static NSManagedObjectContext *context = nil;
@@ -85,7 +86,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Will make fake data");
         NSError *error = nil;
         if (![context save:&error]) {
-            NSLog(@"Error while saving %@",
+            NSLog(@"Error while saving empty MOC %@",
                   ([error localizedDescription] != nil)
                   ? [error localizedDescription]
                   : @"Unknown Error");
@@ -129,9 +130,9 @@ int main(int argc, const char * argv[])
                 Bug* bug = [bugsByTitle objectForKey:bugTitle] ;
                 if (bug) {
                     [bug addProductsObject:product] ;
-                    // Do not set the inverse relationship, because Core Data
-                    // does it for you!
-                    // [product addBugsObject:bug] ;
+                    /* Do not set the inverse relationship, because Core Data
+                      does it for you! */
+                    // [product addBugsObject:bug] ;  <---- NO!!
                 }
                 else {
                     NSLog(@"Error.  Product '%@' has unlisted bug '%@'",
