@@ -50,6 +50,7 @@
 		48AD9D0019B20DE900861763 /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CF819B20DE900861763 /* Bug.m */; };
 		48AD9D0119B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
 		48AD9D0219B20DE900861763 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CFA19B20DE900861763 /* Details.m */; };
+		48C757D719BEA3500082E0F3 /* Networker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C757D619BEA3500082E0F3 /* Networker.m */; };
 		48D8AF8119BE111500AE7B4D /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8AF8019BE111500AE7B4D /* CoreDataStack.m */; };
 		48E1AE7219B592F700AF3843 /* YaBTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9CDA19B12BC300861763 /* YaBTGlobals.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,8 @@
 		48AD9CF819B20DE900861763 /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
 		48AD9CF919B20DE900861763 /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
 		48AD9CFA19B20DE900861763 /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
+		48C757D519BEA3500082E0F3 /* Networker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networker.h; sourceTree = "<group>"; };
+		48C757D619BEA3500082E0F3 /* Networker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networker.m; sourceTree = "<group>"; };
 		48D8AF7F19BE111500AE7B4D /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		48D8AF8019BE111500AE7B4D /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +193,8 @@
 				4821FD1819B0F1A80076F617 /* ProductsViewController.m */,
 				4821FD1A19B0F1A80076F617 /* BugsViewController.h */,
 				4821FD1B19B0F1A80076F617 /* BugsViewController.m */,
+				48C757D519BEA3500082E0F3 /* Networker.h */,
+				48C757D619BEA3500082E0F3 /* Networker.m */,
 				48AD9CF219B20DE900861763 /* Mogenerated */,
 			);
 			path = YaBT;
@@ -396,6 +401,7 @@
 				48AD9D0119B20DE900861763 /* Details.m in Sources */,
 				48AD9CFD19B20DE900861763 /* _Details.m in Sources */,
 				4821FD1919B0F1A80076F617 /* ProductsViewController.m in Sources */,
+				48C757D719BEA3500082E0F3 /* Networker.m in Sources */,
 				4821FD1619B0F1A80076F617 /* YaBT.xcdatamodeld in Sources */,
 				48AD9CFB19B20DE900861763 /* _Bug.m in Sources */,
 				48AD9CFF19B20DE900861763 /* Bug.m in Sources */,

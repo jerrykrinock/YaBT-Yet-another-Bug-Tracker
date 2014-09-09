@@ -37,7 +37,7 @@
     if (![self managedObjectContext]) {
         AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         CoreDataStack* coreDataStack = [appDelegate coreDataStack];
-        NSManagedObjectContext* moc = [coreDataStack managedObjectContext];
+        NSManagedObjectContext* moc = [coreDataStack mainContext];
         [self setManagedObjectContext:moc];
     }
 }

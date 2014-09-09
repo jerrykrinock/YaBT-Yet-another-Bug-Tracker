@@ -10,9 +10,27 @@
 
 @implementation CoreDataStack
 
-@synthesize managedObjectContext = _managedObjectContext;
+// These are required for readonly properties with custom getters
+@synthesize rootContext = _rootContext;
+@synthesize mainContext = _mainContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (id)init {
+    self = [super init] ;
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:nil] ;
+    }
+    
+    return self ;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self] ;
+}
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.sheepsystems.YaBT" in the application's documents directory.
@@ -76,34 +94,90 @@
 }
 
 
-- (NSManagedObjectContext *)managedObjectContext {
-    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+- (NSManagedObjectContext *)rootContext {
+    // Returns the highest-level moc for the application
+    // (which is already bound to the psc for the application.)
+    if (!_rootContext) {
+        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+        if (coordinator) {
+            _rootContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            [_rootContext setPersistentStoreCoordinator:coordinator];
+            [_rootContext setName:@"Root-Context"] ;
+            /*SSYDBL*/ NSLog(@"Created moc: %@", _rootContext) ;
+        }
+        else {
+            // Fail
+            _rootContext = nil ;
+        }
     }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        return nil;
-    }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    return _managedObjectContext;
+
+    return _rootContext;
 }
 
-#pragma mark - Core Data Saving support
+- (NSManagedObjectContext *)mainContext {
+    if (!_mainContext) {
+        _mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType] ;
+        [_mainContext setParentContext:[self rootContext]] ;
+        [_mainContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy] ;
+        [_mainContext setName:@"Main-Context"] ;
+        /*SSYDBL*/ NSLog(@"Created moc: %@", _mainContext) ;
+    }
+    
+    return _mainContext ;
+}
 
-- (void)save {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+- (NSManagedObjectContext *)newWorkerContextNamed:(NSString*)name {
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType] ;
+    [context setParentContext:[self mainContext]] ;
+    [context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy] ;
+    [context setName:name] ;
+    /*SSYDBL*/ NSLog(@"Created moc: %@", context) ;
+
+    return context ;
+}
+
+
+- (void)contextDidSave:(NSNotification*)note {
+    NSManagedObjectContext* savedContext = [note object] ;
+    /*SSYDBL*/ NSLog(@"Context %@ did save", [savedContext name]) ;
+    NSManagedObjectContext* parentContext = [savedContext parentContext] ;
+    if (parentContext) {
+        [self saveContext:parentContext] ;
+    }
+}
+
+- (void)unsafeSaveContext:(NSManagedObjectContext *)context {
+    if ([context hasChanges]) {
+        NSError* error = nil ;
+        BOOL ok = [context save:&error] ;
+        if (!ok) {
+            // You'll do something better in a real app.
+            /*SSYDBL*/ NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }
+    else {/*SSYDBL*/ NSLog(@"Skipped saving unchanged context %@", [context name]) ; }
+}
+
+- (void)saveContext:(NSManagedObjectContext*)context {
+    if (context != nil) {
+#if 0
+#warning Whoops, forgot to wrap moc save in -performBlock:
+        [self unsafeSaveContext:context];
+#else
+        [context performBlock:^{
+            [self unsafeSaveContext:context];
+        }];
+#endif
+    }
+}
+
+- (void)saveRootContext {
+    [self saveContext:[self rootContext]] ;
+}
+
+- (void)saveMainContext {
+    [self saveContext:[self mainContext]] ;
 }
 
 @end

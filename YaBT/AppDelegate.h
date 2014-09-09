@@ -3,6 +3,7 @@
 @class CoreDataStack ;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    // Readonly property with non-default getter requires declaration…
     CoreDataStack* _coreDataStack ;
 }
 

@@ -47,17 +47,15 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
 
     Product* product = [Product insertInManagedObjectContext:context];
-    [product setName:@"New Main"] ;
+    [product setName:[[NSString alloc] initWithFormat:@"User made at %@", DemoTimestamp()]] ;
 
+#if 0
+#warning Whoops, getting a property value on a different thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-#if 1
-        Product* product = [Product insertInManagedObjectContext:context];
-        [product setName:@"New Non-Main"] ;
-#else
         NSString* name = product.name ;
-        NSLog(@"We just created %@", name) ;
-#endif
+        NSLog(@"We just created product %@", name) ;
     });
+#endif
     
     NSError *error = nil;
     if (![context save:&error]) {
@@ -125,11 +123,7 @@
 - (void)configureCell:(UITableViewCell *)cell
           atIndexPath:(NSIndexPath *)indexPath {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[NSString alloc] initWithFormat:
-                           @"%@ (%ld bugs)",
-                           [object valueForKey:ProductAttributes.name],
-                           (long)[[object valueForKey:ProductRelationships.bugs] count]
-                           ] ;
+    cell.textLabel.text = [object valueForKey:ProductAttributes.name] ;
 }
 
 #pragma mark - Fetched results controller

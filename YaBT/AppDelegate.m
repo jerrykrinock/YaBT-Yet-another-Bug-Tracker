@@ -4,6 +4,7 @@
 #import "BugsViewController.h"
 #import "YaBTGlobals.h"
 #import "CoreDataStack.h"
+#import "Networker.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +26,11 @@
     // Set managed object context for products view controller
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ProductsViewController *pvc = (ProductsViewController *)navigationController.topViewController;
-    [pvc setManagedObjectContext:[[self coreDataStack] managedObjectContext]];
+    [pvc setManagedObjectContext:[[self coreDataStack] mainContext]];
+    
+    // Start a repeating timer which will simulate new objects arriving
+    // from the network and merged into our Core Data store.
+    [Networker startWithInterval:20.0] ;
 
     return YES;
 }
@@ -51,7 +56,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [[self coreDataStack] save];
+    [[self coreDataStack] saveMainContext];
 }
 
 @end

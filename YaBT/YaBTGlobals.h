@@ -2,6 +2,4 @@
 
 extern NSString* const YaBTErrorDomain ;
 
-@interface YaBTGlobals : NSObject
-
-@end
+NSString* DemoTimestamp() ;
