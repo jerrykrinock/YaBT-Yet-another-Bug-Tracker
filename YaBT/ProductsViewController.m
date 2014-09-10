@@ -46,6 +46,16 @@
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
 
+    /* A good question is: Do we need to wrap the remainder of this method
+     in -performBlock:?  The answer is that we do not, because this context was
+     created with main queue concurrency type, and being in a view controller
+     here, we *know* (do we?) that we will always be on the main thread.
+     However, if you're not sure about that, you *could* wrap the remainder of
+     this method in -peformBlock, for extra safety.  I tried that, and measured
+     a performance penalty of 1.5x to 3x depending on memory pressure.  Of
+     course, to measure it here you need to use -performBlockAndWait: because
+     -performBlock: returns immediately.
+     */
     Product* product = [Product insertInManagedObjectContext:context];
     [product setName:[[NSString alloc] initWithFormat:@"User made at %@", DemoTimestamp()]] ;
 
@@ -222,19 +232,5 @@
     [self.tableView endUpdates];
 }
 
-/*
- Implementing the above methods to update the table view in response to
- individual changes may have performance implications if a large number of
- changes are made simultaneously. If this proves to be an issue, you can
- instead just implement controllerDidChangeContent: which notifies the delegate
- that all section and object changes have been processed.
-*/
-#if 0
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
-#endif
 
 @end

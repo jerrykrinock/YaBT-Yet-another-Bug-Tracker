@@ -157,6 +157,9 @@
                                                   managedObjectContext:self.managedObjectContext
                /* Only 1 secion */                  sectionNameKeyPath:nil
                /* Filename of cache */                       cacheName:nil];
+        // Crashed when cacheName was not nil.  Did not investigate, except
+        // read posts from other developers indicating that using a cache
+        // is tricky.
         frc.delegate = self;
         [self setFetchedResultsController:frc];
     }
@@ -225,20 +228,5 @@
 {
     [self.tableView endUpdates];
 }
-
-/*
- Implementing the above methods to update the table view in response to
- individual changes may have performance implications if a large number of
- changes are made simultaneously. If this proves to be an issue, you can
- instead just implement controllerDidChangeContent: which notifies the delegate
- that all section and object changes have been processed.
- */
-#if 0
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
-#endif
 
 @end
