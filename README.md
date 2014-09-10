@@ -10,4 +10,7 @@ It is required as a resource to build the YaBT app target.  Therefore, you need 
 MakeFakeDB target once, before the YaBT iOS app target will build.
 
 This project will be discussed at a Meetup at Sandbox Suites, 888 E. Arques Ave. Sunnyvale CA on Tuesday
-Sept 9 2014 at 7:00 PM.  I'll probably make a few more commits between now and then :)
+Sept 9 2014 at 7:00 PM.
+
+UPDATE: Links to the items discussed (and some which I didn't get to) at the meetup, upon some of which
+this project is based, are now in [this companion blog post](http://www.sheepsystems.com/developers_blog/advanced-iosobjective-cswif.html).
